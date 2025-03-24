@@ -28,7 +28,7 @@ jobs:
       - name: Run Semgrep Scan
         uses: docker://semgrep/semgrep:latest
         with:
-          args: scan --config "p/security-audit" --config "p/python" --config "p/owasp-top-ten" --config "p/python" --config "p/trailofbits" --sarif --output=semgrep.sarif 
+          args: --config "p/security-audit" --config "p/python" --config "p/owasp-top-ten" --config "p/python" --config "p/trailofbits" --sarif --output=semgrep.sarif 
 
       # Upload SARIF file generated in previous step
       - name: Upload SARIF file
